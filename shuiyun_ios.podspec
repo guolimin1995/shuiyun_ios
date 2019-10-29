@@ -35,7 +35,7 @@ TODO: Add long description of the pod here.
 
   s.subspec '3rd' do |a|
       a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
-      a.ios.libraries = 'libresolv.9','c++','libc++','libz'
+      a.ios.libraries = 'resolv.9','c++','z'
       a.dependency 'UMCCommon'
       a.dependency 'UMCSecurityPlugins'
       a.dependency 'UMCAnalytics'
