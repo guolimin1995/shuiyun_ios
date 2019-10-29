@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -29,8 +29,21 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.subspec 'Core' do |b|
+      b.source_files = 'shuiyun_ios/Classes/**/*'
+  end
 
-  s.source_files = 'shuiyun_ios/Classes/**/*'
+  s.subspec '3rd' do |a|
+      a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
+      a.ios.libraries = 'libresolv.9','c++','libc++','libz'
+      a.dependency 'UMCCommon'
+      a.dependency 'UMCSecurityPlugins'
+      a.dependency 'UMCAnalytics'
+      a.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
+      a.dependency 'Bytedance-UnionAD','2.5.1.2'
+      a.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) BYTE_DANCE_ONLY=1'}
+  end
+
   
   # s.resource_bundles = {
   #   'shuiyun_ios' => ['shuiyun_ios/Assets/*.png']
