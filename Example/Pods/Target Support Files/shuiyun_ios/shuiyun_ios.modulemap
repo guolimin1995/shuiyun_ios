@@ -1,0 +1,6 @@
+framework module shuiyun_ios {
+  umbrella header "shuiyun_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

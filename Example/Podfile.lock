@@ -1,0 +1,16 @@
+PODS:
+  - shuiyun_ios (0.1.0)
+
+DEPENDENCIES:
+  - shuiyun_ios (from `../`)
+
+EXTERNAL SOURCES:
+  shuiyun_ios:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  shuiyun_ios: f9504c85bf500287ee228b1f62bf2b5757768db3
+
+PODFILE CHECKSUM: a8bcf48ab6ff01e7aaf9e9538270bbff71cf5eae
+
+COCOAPODS: 1.8.4

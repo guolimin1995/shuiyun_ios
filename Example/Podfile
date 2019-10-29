@@ -1,0 +1,6 @@
+use_frameworks!
+target 'shuiyun_ios_Tests' do
+  pod 'shuiyun_ios', :path => '../'
+  
+  
+end

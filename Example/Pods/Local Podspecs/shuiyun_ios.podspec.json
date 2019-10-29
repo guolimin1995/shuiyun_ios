@@ -1,0 +1,22 @@
+{
+  "name": "shuiyun_ios",
+  "version": "0.1.0",
+  "summary": "A short description of shuiyun_ios.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/913108060@qq.com/shuiyun_ios",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "913108060@qq.com": "cheman@6cit.com"
+  },
+  "source": {
+    "git": "https://github.com/913108060@qq.com/shuiyun_ios.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "shuiyun_ios/Classes/**/*"
+}
