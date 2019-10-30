@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -34,8 +34,9 @@ TODO: Add long description of the pod here.
   end
 
   s.subspec '3rd' do |a|
-      a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
-      a.ios.libraries = 'resolv.9','c++','z'
+      # a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
+      a.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
+      a.ios.libraries = 'resolv.9','c++'
       a.dependency 'UMCCommon'
       a.dependency 'UMCSecurityPlugins'
       a.dependency 'UMCAnalytics'
