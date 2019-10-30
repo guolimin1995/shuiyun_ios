@@ -8,15 +8,15 @@
 #import "BUAdManager.h"
 #import "BUAdBanner.h"
 
+
+NSString *BUAdKey = @"";
+NSString *bannerKey = @"";
+NSString *videoKey = @"";
+
 @implementation BUAdManager
 
 
-static NSString BUAdKey = @"";
-static NSString bannerKey = @"";
-static NSString videoKey = @"";
-
-
-+(void)setAllKeys:(NSString*)key :(NSString *)banner_key :(NSString *)video_key{
++(void)setAllKeys:(NSString*)key banner_key:(NSString*)banner_key video_key:(NSString*)video_key{
     BUAdKey = key;
     bannerKey = banner_key;
     videoKey = video_key;
@@ -38,7 +38,7 @@ static NSString videoKey = @"";
 
 
 //加载广告
--(void)loadNativeAd:(NSString *)type :(NSString *)name success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+-(void)loadNativeAd:(NSString *)type success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
     //    NSLog(@"------ 加载广告 %@",type);
     NSArray *aName = [NSArray arrayWithObjects:@"bannerAd",@"videoAd",nil];
     int index = (int)[aName indexOfObject:type];
@@ -62,7 +62,7 @@ static NSString videoKey = @"";
             }
             
             //加载激励视频广告
-            [self.rewardVideoAd loadRewardedVideoAd:name :^(NSString *data) {
+            [self.rewardVideoAd loadRewardedVideoAd:@"" :^(NSString *data) {
                 if ([data isEqualToString:@"success"]) {
                     success(nil);
                 }else{

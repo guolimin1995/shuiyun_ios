@@ -24,17 +24,15 @@
 - (NSString *)videoAdId;
 
 - (void)loadNativeAd:(NSString *)type
-                    :(NSString *)name
              success:(void (^)(NSString *data))success
              failure:(void (^)(NSString *data))failure;
 
 - (void)removeNativeAd:(NSString *)type
-                      :(NSString *)name
                success:(void (^)(NSString *data))success
                failure:(void (^)(NSString *data))failure;
 
 + (void)setAllKeys:(NSString *)key
-                  :(NSString *)banner_key
-                  :(NSString *)video_key;
+        banner_key:(NSString *)banner_key
+         video_key:(NSString *)video_key;
 
 @end

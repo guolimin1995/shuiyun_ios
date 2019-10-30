@@ -1,7 +1,7 @@
-#import "BUAdRewardedVideo.h"
 #import "BUAdManager.h"
 #import <BUAdSDK/BURewardedVideoAd.h>
 #import <BUAdSDK/BURewardedVideoModel.h>
+#import "BUAdRewardedVideo.h"
 
 extern BUAdManager* BuadMgr;
 

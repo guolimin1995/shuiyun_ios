@@ -16,11 +16,12 @@
 
 BUAdManager* BuadMgr;
 
+
+
 +(void) initUMMobSdk:(NSString*) appKey channel:(NSString*) channel
 {
     [UMConfigure setLogEnabled:NO];
     [UMConfigure initWithAppkey:appKey channel:channel];
-    [MobClick setScenarioType:E_UM_GAME];//支持游戏场景
     // sIsUMInited = true;
 }
 
@@ -35,9 +36,9 @@ BUAdManager* BuadMgr;
     [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
 }
 
-+(void) initBUAdSdk:(NSString*) appKey: (NSString*) bannerKey: (NSString*) videoKey
++(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
 {
-    [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey]
+    [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
     BuadMgr = [[BUAdManager alloc] init]; 
     [BUAdSDKManager setAppID:[BuadMgr appKey]];
     [BUAdSDKManager setIsPaidApp:NO];
@@ -46,16 +47,16 @@ BUAdManager* BuadMgr;
 
 //显示激励视频
 +(void)showRewardVideoAd: success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
-    [BuadMgr loadNativeAd:@"videoAd" :name success:^(NSString *data) {
-        success(nil)
+    [BuadMgr loadNativeAd:@"videoAd" success:^(NSString *data) {
+        success(nil);
     } failure:^(NSString *data) {
-        failure(nil)
+        failure(nil);
     }];
 }
 
 +(void)showBannerAd 
 {
-    [BuadMgr loadNativeAd:@"bannerAd" :name success:^(NSString *data) {
+    [BuadMgr loadNativeAd:@"bannerAd" success:^(NSString *data) {
         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
     } failure:^(NSString *data) {
         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
@@ -63,12 +64,13 @@ BUAdManager* BuadMgr;
 }
 +(void)hideBannerAd 
 {
-    [BuadMgr removeNativeAd:@"bannerAd" :name success:^(NSString *data) {
+    [BuadMgr removeNativeAd:@"bannerAd"  success:^(NSString *data) {
         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
     } failure:^(NSString *data) {
         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
     }];
 }
+@end
 
 // +(bool) isUMInited
 // {
