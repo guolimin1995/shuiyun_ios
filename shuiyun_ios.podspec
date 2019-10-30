@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
   s.subspec 'Core' do |b|
-      b.source_files = 'shuiyun_ios/Classes/**/*'
+      b.source_files = 'shuiyun_ios/Classes/**/*.h'
   end
 
   s.subspec '3rd' do |a|
