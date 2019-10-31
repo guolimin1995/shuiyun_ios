@@ -5,7 +5,7 @@
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
 #import "BUAdSDK/BUAdSDKManager.h"
-#import "ad/BUAdManager.h"
+#import "BUAdManager.h"
 
 @implementation SYSdkUtils
 

@@ -77,7 +77,7 @@ NSString *videoKey = @"";
 }
 
 //
--(void)removeNativeAd:(NSString *)type :(NSString *)name success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+-(void)removeNativeAd:(NSString *)type success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
     NSArray *aName = [NSArray arrayWithObjects:@"bannerAd",@"videoAd",nil];
     int index = (int)[aName  indexOfObject:type];
     switch (index) {
