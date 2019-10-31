@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -39,7 +39,7 @@ TODO: Add long description of the pod here.
   s.ios.libraries = 'resolv.9','c++'
   s.dependency 'UMCCommon'
   s.dependency 'UMCSecurityPlugins'
-  a.dependency 'UMCAnalytics'
+  s.dependency 'UMCAnalytics'
   s.dependency 'Bytedance-UnionAD','2.5.1.2'
   s.ios.vendored_frameworks = 'shuiyun_ios/Assets/GDTActionSDK.framework'
   s.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
