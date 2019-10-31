@@ -3,8 +3,8 @@
 
 #import <GDTActionSDK/GDTAction.h>
 #import <UMCommon/UMCommon.h>
-#import <UMAnalytics/MobClick.h>
-#import "BUAdSDK/BUAdSDKManager.h"
+// #import <UMAnalytics/MobClick.h>
+// #import "BUAdSDK/BUAdSDKManager.h"
 // #import "BUAdManager.h"
 
 @implementation SYSdkUtils
