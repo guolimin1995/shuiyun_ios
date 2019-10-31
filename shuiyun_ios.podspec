@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.2.2'
+  s.version          = '0.2.3'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'shuiyun_ios/Classes/**/*'
+  s.source_files = 'shuiyun_ios/Classes/**/*.{h,m}'
 
 
 
@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   s.dependency 'UMCAnalytics'
   s.dependency 'Bytedance-UnionAD','2.5.1.2'
   s.ios.vendored_frameworks = 'shuiyun_ios/Assets/GDTActionSDK.framework'
-  s.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
+  s.vendored_frameworks = 'GDTActionSDK.framework'
   # a.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) BYTE_DANCE_ONLY=1'}
 
 
