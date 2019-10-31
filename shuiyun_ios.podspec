@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -29,21 +29,22 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-  s.subspec 'Core' do |b|
-      b.source_files = 'shuiyun_ios/Classes/**/*.h'
-  end
 
-  s.subspec '3rd' do |a|
-      # a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
-      a.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
-      a.ios.libraries = 'resolv.9','c++'
-      a.dependency 'UMCCommon'
-      a.dependency 'UMCSecurityPlugins'
-      a.dependency 'UMCAnalytics'
-      a.dependency 'Bytedance-UnionAD','2.5.1.2'
-      a.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
-      # a.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) BYTE_DANCE_ONLY=1'}
-  end
+  s.source_files = 'shuiyun_ios/Classes/**/*'
+
+
+
+  # a.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
+  s.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
+  s.ios.libraries = 'resolv.9','c++'
+  s.dependency 'UMCCommon'
+  s.dependency 'UMCSecurityPlugins'
+  a.dependency 'UMCAnalytics'
+  s.dependency 'Bytedance-UnionAD','2.5.1.2'
+  s.ios.vendored_frameworks = 'shuiyun_ios/Assets/GDTActionSDK.framework'
+  s.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
+  # a.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) BYTE_DANCE_ONLY=1'}
+
 
   
   # s.resource_bundles = {

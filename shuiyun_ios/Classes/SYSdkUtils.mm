@@ -20,7 +20,6 @@
 
 +(void) initUMMobSdk:(NSString*) appKey channel:(NSString*) channel
 {
-    [UMConfigure setLogEnabled:NO];
     [UMConfigure initWithAppkey:appKey channel:channel];
     // sIsUMInited = true;
 }

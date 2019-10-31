@@ -1,5 +1,5 @@
-// #ifndef SYSdkUtils_h
-// #define SYSdkUtils_h
+#ifndef SYSdkUtils_h
+#define SYSdkUtils_h
 
 #import <Foundation/Foundation.h>
 
@@ -24,4 +24,4 @@
 // + (bool)isGDTInited;
 @end
 
-// #endif
+#endif
