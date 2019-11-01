@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SYSdkUtils.h"
 
-#import <GDTActionSDK/GDTAction.h>
+// #import <GDTActionSDK/GDTAction.h>
 #import <UMCommon/UMCommon.h>
 // #import <UMAnalytics/MobClick.h>
 // #import "BUAdSDK/BUAdSDKManager.h"
@@ -24,11 +24,11 @@
     // sIsUMInited = true;
 }
 
-+(void) initGDTActionSdk:(NSString*) setid secretkey:(NSString*)secretkey
-{
-    [GDTAction init:setid secretKey:secretkey];
-    // sIsGDTInited = true;
-}
+// +(void) initGDTActionSdk:(NSString*) setid secretkey:(NSString*)secretkey
+// {
+//     [GDTAction init:setid secretKey:secretkey];
+//     // sIsGDTInited = true;
+// }
 
 // +(void) doGDTSDKActionStartApp
 // {
