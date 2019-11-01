@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.2.8'
+  s.version          = '0.2.9'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -30,9 +30,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'shuiyun_ios/Classes/*.{h, m}'
-
-
+  s.source_files = 'shuiyun_ios/Classes/**/*.{h, m}'
+  s.pod_target_xcconfig  =  {'OTHER_LDFLAGS'  =>  '$(inherited)'}
 
   # s.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
   # s.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
