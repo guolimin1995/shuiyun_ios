@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -34,9 +34,9 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO'
   # s.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
   # s.libraries = 'resolv.9','c++','z','sqlite3'
-  s.dependency 'UMCCommon','~> 2.1.1'
-  s.dependency 'UMCSecurityPlugins','~> 1.0.6'
-  s.dependency 'UMCAnalytics','~> 6.0.5'
+  s.dependency 'UMCCommon'
+  s.dependency 'UMCSecurityPlugins'
+  s.dependency 'UMCAnalytics'
 
   # s.dependency 'Bytedance-UnionAD'
   # s.vendored_frameworks = ['shuiyun_ios/Assets/GDTActionSDK.framework']
