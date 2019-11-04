@@ -3,7 +3,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SYSdkUtils : NSObject
+@interface SYSdkUtils : NSObject {
+    
+}
 
 + (void)initUMMobSdk:(NSString *)appKey channel:(NSString *)channel;
 // + (void)initGDTActionSdk:(NSString *)setid secretkey:(NSString *)secretkey;

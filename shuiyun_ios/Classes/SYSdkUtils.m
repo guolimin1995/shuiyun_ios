@@ -3,7 +3,6 @@
 
 // #import <GDTActionSDK/GDTAction.h>
 #import <UMCommon/UMCommon.h>
-// #import <UMAnalytics/MobClick.h>
 // #import "BUAdSDK/BUAdSDKManager.h"
 // #import "BUAdManager.h"
 
@@ -70,17 +69,3 @@
 //     }];
 // }
 @end
-
-// +(bool) isUMInited
-// {
-//     return sIsUMInited;
-// }
-
-// +(bool) isGDTInited
-// {
-//     return sIsGDTInited;
-// }
-// +(bool) isBUAdInited
-// {
-//     return sIsBUAdInited;
-// }
