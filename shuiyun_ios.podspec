@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.3.1'
+  s.version          = '0.3.2'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zerone' => '913108060@qq.com' }
-  s.source           = { :git => 'https://github.com/guolimin1995/shuiyun_ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/guolimin1995/shuiyun_ios.git', :tag => "#{s.version}" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
