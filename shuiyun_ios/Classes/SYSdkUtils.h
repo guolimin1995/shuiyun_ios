@@ -13,8 +13,7 @@
 + (void)doGDTSDKActionStartApp;
 + (void)initBUAdSdk:(NSString *)appkey bannerKey:(NSString *)bannerKey videoKey:(NSString *)videoKey;
 
-+ (void)showRewardVideoAd:success
-                         :(void (^)(NSString *data))success
++ (void)showRewardVideoAd:(void (^)(NSString *data))success
                   failure:(void (^)(NSString *data))failure;
 
 + (void)showBannerAd;
