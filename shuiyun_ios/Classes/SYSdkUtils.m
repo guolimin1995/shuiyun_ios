@@ -4,8 +4,8 @@
 #import <GDTActionSDK/GDTAction.h>
 #import <UMCommon/UMCommon.h>
 #import <AdSupport/AdSupport.h>
-// #import "BUAdSDK/BUAdSDKManager.h"
-// #import "BUAdManager.h"
+#import "BUAdSDK/BUAdSDKManager.h"
+#import "BUAdManager.h"
 
 @implementation SYSdkUtils
 
@@ -14,7 +14,7 @@
 // static bool sIsGDTInited = false;
 // static bool sIsBUAdInited = false;
 
-// BUAdManager* BuadMgr;
+BUAdManager* BuadMgr;
 
 
 
@@ -61,51 +61,57 @@
          */
         NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
            //8.解析数据
-           NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-           NSLog(@"解析数据 %@",dict);
+            @try {
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                NSLog(@"解析数据 %@",dict);
+           }
+           @catch (NSException *exception){
+               NSLog(@"请求错误");
+           }
+
         }];
         
         //7.执行任务
         [dataTask resume];
 }
 
-// +(void) doGDTSDKActionStartApp
-// {
-//     [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
-// }
++(void) doGDTSDKActionStartApp
+{
+    [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
+}
 
-// +(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
-// {
-//     [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
-//     BuadMgr = [[BUAdManager alloc] init]; 
-//     [BUAdSDKManager setAppID:[BuadMgr appKey]];
-//     [BUAdSDKManager setIsPaidApp:NO];
-//     // sIsBUAdInited = true;
-// }
++(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
+{
+    [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
+    BuadMgr = [[BUAdManager alloc] init]; 
+    [BUAdSDKManager setAppID:[BuadMgr appKey]];
+    [BUAdSDKManager setIsPaidApp:NO];
+    // sIsBUAdInited = true;
+}
 
-//显示激励视频
-// +(void)showRewardVideoAd: success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
-//     [BuadMgr loadNativeAd:@"videoAd" success:^(NSString *data) {
-//         success(nil);
-//     } failure:^(NSString *data) {
-//         failure(nil);
-//     }];
-// }
+// 显示激励视频
++(void)showRewardVideoAd: success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+    [BuadMgr loadNativeAd:@"videoAd" success:^(NSString *data) {
+        success(nil);
+    } failure:^(NSString *data) {
+        failure(nil);
+    }];
+}
 
-// +(void)showBannerAd 
-// {
-//     [BuadMgr loadNativeAd:@"bannerAd" success:^(NSString *data) {
-//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
-//     } failure:^(NSString *data) {
-//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
-//     }];
-// }
-// +(void)hideBannerAd 
-// {
-//     [BuadMgr removeNativeAd:@"bannerAd"  success:^(NSString *data) {
-//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
-//     } failure:^(NSString *data) {
-//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
-//     }];
-// }
++(void)showBannerAd 
+{
+    [BuadMgr loadNativeAd:@"bannerAd" success:^(NSString *data) {
+        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
+    } failure:^(NSString *data) {
+        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
+    }];
+}
++(void)hideBannerAd 
+{
+    [BuadMgr removeNativeAd:@"bannerAd"  success:^(NSString *data) {
+        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
+    } failure:^(NSString *data) {
+        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
+    }];
+}
 @end
