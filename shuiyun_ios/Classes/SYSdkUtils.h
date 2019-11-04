@@ -3,13 +3,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SYSdkUtils : NSObject {
-    
+@interface SYSdkUtils : NSObject
+{
 }
 
 + (void)initUMMobSdk:(NSString *)appKey channel:(NSString *)channel;
-// + (void)initGDTActionSdk:(NSString *)setid secretkey:(NSString *)secretkey;
-// + (void)doGDTSDKActionStartApp;
++ (void)initGDTActionSdk:(NSString *)setid secretkey:(NSString *)secretkey;
++ (void)initMonitor:(NSString *)gameid;
+// vo+ (void)doGDTSDKActionStartApp;
 // + (void)initBUAdSdk:(NSString *)appkey bannerKey:(NSString *)bannerKey videoKey:(NSString *)videoKey;
 
 // + (void)showRewardVideoAd:success
