@@ -82,7 +82,7 @@ BUAdManager* BuadMgr;
 +(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
 {
     [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
-    BuadMgr = [[BUAdManager alloc] init]; 
+    // BuadMgr = [[BUAdManager alloc] init]; 
     [BUAdSDKManager setAppID:appKey];
     [BUAdSDKManager setIsPaidApp:NO];
     // sIsBUAdInited = true;
