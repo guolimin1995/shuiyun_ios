@@ -18,7 +18,6 @@ BUAdManager* BuadMgr;
 
 
 
-
 +(void) initUMMobSdk:(NSString*) appKey channel:(NSString*) channel
 {
     [UMConfigure initWithAppkey:appKey channel:channel];
@@ -83,35 +82,35 @@ BUAdManager* BuadMgr;
 +(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
 {
     [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
-    BuadMgr = [[BUAdManager alloc] init]; 
-    [BUAdSDKManager setAppID:[BuadMgr appKey]];
+    // BuadMgr = [[BUAdManager alloc] init]; 
+    [BUAdSDKManager setAppID:appKey];
     [BUAdSDKManager setIsPaidApp:NO];
     // sIsBUAdInited = true;
 }
 
-// 显示激励视频
-+(void)showRewardVideoAd: success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
-    [BuadMgr loadNativeAd:@"videoAd" success:^(NSString *data) {
-        success(nil);
-    } failure:^(NSString *data) {
-        failure(nil);
-    }];
-}
+// // 显示激励视频
+// +(void)showRewardVideoAd: success:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+//     [BuadMgr loadNativeAd:@"videoAd" success:^(NSString *data) {
+//         success(nil);
+//     } failure:^(NSString *data) {
+//         failure(nil);
+//     }];
+// }
 
-+(void)showBannerAd 
-{
-    [BuadMgr loadNativeAd:@"bannerAd" success:^(NSString *data) {
-        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
-    } failure:^(NSString *data) {
-        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
-    }];
-}
-+(void)hideBannerAd 
-{
-    [BuadMgr removeNativeAd:@"bannerAd"  success:^(NSString *data) {
-        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
-    } failure:^(NSString *data) {
-        //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
-    }];
-}
+// +(void)showBannerAd 
+// {
+//     [BuadMgr loadNativeAd:@"bannerAd" success:^(NSString *data) {
+//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
+//     } failure:^(NSString *data) {
+//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
+//     }];
+// }
+// +(void)hideBannerAd 
+// {
+//     [BuadMgr removeNativeAd:@"bannerAd"  success:^(NSString *data) {
+//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"success"];
+//     } failure:^(NSString *data) {
+//         //        [[conchRuntime GetIOSConchRuntime] callbackToJSWithObject:self methodName:@"showBannerAd:" ret:@"failed"];
+//     }];
+// }
 @end
