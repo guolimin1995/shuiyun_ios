@@ -23,13 +23,19 @@
 - (NSString *)bannerAdId;
 - (NSString *)videoAdId;
 
-- (void)loadNativeAd:(NSString *)type
-             success:(void (^)(NSString *data))success
-             failure:(void (^)(NSString *data))failure;
+- (void)showRewardVideoAd:(void (^)(NSString *data))success
+                  failure:(void (^)(NSString *data))failure;
 
-- (void)removeNativeAd:(NSString *)type
-               success:(void (^)(NSString *data))success
-               failure:(void (^)(NSString *data))failure;
+- (void)showBannerAd;
+- (void)hideBannerAd;
+
+// - (void)loadNativeAd:(NSString *)type
+//              success:(void (^)(NSString *data))success
+//              failure:(void (^)(NSString *data))failure;
+
+// - (void)removeNativeAd:(NSString *)type
+//                success:(void (^)(NSString *data))success
+//                failure:(void (^)(NSString *data))failure;
 
 + (void)setAllKeys:(NSString *)key
         banner_key:(NSString *)banner_key
