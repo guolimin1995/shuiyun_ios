@@ -37,10 +37,10 @@ Pod install 后的 Pods/shuiyun_ios/shuiyun_ios/Assets/ 下的 GDTActionSDK.fram
 
 #初始化:
 
-[SYSdkUtils initUMMobSdk:@"<appkey>" channel:@"<channel>"];
-[SYSdkUtils initMonitor:@"<gameid>"];
-[SYSdkUtils initGDTActionSdk:@"<setId>" secretkey:@"<secretKey>"];
-[SYSdkUtils initBUAdSdk:@"<appKey>" bannerKey:@"<bannerKey>" videoKey:@"<videoKey>"];
+[SYSdkUtils initUMMobSdk:@"<you_um_key>" channel:@"<you_um_channel>"];
+[SYSdkUtils initMonitor:@"<you_gameid>"];
+[SYSdkUtils initGDTActionSdk:@"<you_gdt_setId>" secretkey:@"<you_gdt_secretKey>"];
+[SYSdkUtils initBUAdSdk:@"<you_tt_appid>" bannerKey:@"<you_banner_id>" videoKey:@"<you_video_id>"];
 
 #在 applicationDidBecomeActive 里调用:
 
