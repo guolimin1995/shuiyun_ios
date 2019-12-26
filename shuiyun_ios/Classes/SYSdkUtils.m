@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "SYSdkUtils.h"
 
-#import <GDTActionSDK/GDTAction.h>
+// #import <GDTActionSDK/GDTAction.h>
 #import <UMCommon/UMCommon.h>
 #import <AdSupport/AdSupport.h>
 #import "BUAdSDK/BUAdSDKManager.h"
@@ -25,11 +25,11 @@ BUAdManager* BuadMgr;
     // sIsUMInited = true;
 }
 
-+(void) initGDTActionSdk:(NSString*) setid secretkey:(NSString*)secretkey
-{
-    [GDTAction init:setid secretKey:secretkey];
-    // sIsGDTInited = true;
-}
+// +(void) initGDTActionSdk:(NSString*) setid secretkey:(NSString*)secretkey
+// {
+//     [GDTAction init:setid secretKey:secretkey];
+//     // sIsGDTInited = true;
+// }
 
 +(void) initMonitor:(NSString *) gameid
 {
@@ -74,10 +74,10 @@ BUAdManager* BuadMgr;
         [dataTask resume];
 }
 
-+(void) doGDTSDKActionStartApp
-{
-    [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
-}
+// +(void) doGDTSDKActionStartApp
+// {
+//     [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
+// }
 
 +(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
 {

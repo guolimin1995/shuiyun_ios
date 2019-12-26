@@ -8,9 +8,9 @@
 }
 
 + (void)initUMMobSdk:(NSString *)appKey channel:(NSString *)channel;
-+ (void)initGDTActionSdk:(NSString *)setid secretkey:(NSString *)secretkey;
+// + (void)initGDTActionSdk:(NSString *)setid secretkey:(NSString *)secretkey;
 + (void)initMonitor:(NSString *)gameid;
-+ (void)doGDTSDKActionStartApp;
+// + (void)doGDTSDKActionStartApp;
 + (void)initBUAdSdk:(NSString *)appkey bannerKey:(NSString *)bannerKey videoKey:(NSString *)videoKey;
 
 // + (void)showRewardVideoAd:(void (^)(NSString *data))success
