@@ -33,7 +33,6 @@ extern BUAdManager* BuadMgr;
         self.bannerView = [[BUNativeExpressBannerView alloc]
                            initWithSlotID:[BuadMgr bannerAdId]
                            rootViewController:self
-                           imgSize:imgSize
                            adSize:CGSizeMake(screenWidth, bannerHeight)
                            IsSupportDeepLink:YES];
         self.bannerView.frame = CGRectMake(0, screenHeight-bannerHeight, screenWidth, bannerHeight);
