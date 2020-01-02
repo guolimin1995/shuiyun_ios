@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'shuiyun_ios'
-  s.version          = '0.4.6'
+  s.version          = '0.4.7'
   s.summary          = 'A short description of shuiyun_ios.'
 
 # This description is used to generate tags and improve search results.
@@ -31,9 +31,10 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
   
   s.source_files = 'shuiyun_ios/Classes/**/*'
-  s.frameworks = 'StoreKit','MobileCoreServices','WebKit','MediaPlayer','CoreMedia','CoreLocation','AVFoundation','CoreTelephony','SystemConfiguration','AdSupport','CoreMotion','ImageIO','CoreData'
-  # s.frameworks = 'AdSupport','CoreData','SystemConfiguration','AVFoundation','CoreMedia'
-  s.ios.libraries = 'resolv.9','c++','z','sqlite3'
+
+  # s.frameworks = 'UIKit', 'MapKit', 'WebKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate'
+  # s.ios.libraries = 'resolv.9','c++','z','sqlite3'
+
   s.dependency 'UMCCommon'
   s.dependency 'UMCSecurityPlugins'
   s.dependency 'UMCAnalytics'
