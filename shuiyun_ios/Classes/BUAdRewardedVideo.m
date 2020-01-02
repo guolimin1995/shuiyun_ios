@@ -10,6 +10,7 @@ extern BUAdManager* BuadMgr;
 // @property (nonatomic, strong) BURewardedVideoAd *rewardedVideoAd;
 @interface BUAdRewardedVideo () <BUNativeExpressRewardedVideoAdDelegate>
 @property (nonatomic, strong) BUNativeExpressRewardedVideoAd *rewardedVideoAd;
+@property (nonatomic, strong) NSString * isShowVideo;
 @end
 
 @implementation BUAdRewardedVideo
@@ -36,14 +37,19 @@ extern BUAdManager* BuadMgr;
     model.userId = @"123";
     self.rewardedVideoAd = [[BUNativeExpressRewardedVideoAd alloc] initWithSlotID:[BuadMgr videoAdId] rewardedVideoModel:model];
     self.rewardedVideoAd.delegate = self;
-    [self.rewardedVideoAd loadAdData];
+    if (self.rewardedVideoAd.isAdValid) {
+        [self.rewardedVideoAd showAdFromRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+    }else{
+        [self.rewardedVideoAd loadAdData];
+    }
+    
+    self.isShowVideo = @"yes";
 }
 
 #pragma mark BURewardedVideoAdDelegate
 
 - (void)nativeExpressRewardedVideoAdDidLoad:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     NSLog(@"------ rewardedVideoAd data load success");
-    [self.rewardedVideoAd showAdFromRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
 - (void)nativeExpressRewardedVideoAd:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
@@ -56,6 +62,10 @@ extern BUAdManager* BuadMgr;
 
 - (void)nativeExpressRewardedVideoAdViewRenderSuccess:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd {
     NSLog(@"------ nativeExpressRewardedVideoAdViewRenderSuccess video load success %@",rewardedVideoAd);
+    if([self.isShowVideo isEqualToString:@"yes"]){
+        [self.rewardedVideoAd showAdFromRootViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+    }
+
 }
 
 - (void)nativeExpressRewardedVideoAdViewRenderFail:(BUNativeExpressRewardedVideoAd *)rewardedVideoAd error:(NSError *_Nullable)error {
@@ -80,6 +90,7 @@ extern BUAdManager* BuadMgr;
     NSLog(@"------ nativeExpressRewardedVideoAdDidClose");
     self.callback(@"success");
     // [self.rewardedAd loadAdData];
+    self.isShowVideo = @"no";
     [self.rewardedVideoAd loadAdData];
 }
 
