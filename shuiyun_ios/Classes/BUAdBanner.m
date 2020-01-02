@@ -28,14 +28,27 @@ extern BUAdManager* BuadMgr;
 
 - (void)loadBannerAd{
     if (self.bannerView == nil) {
-        CGFloat screenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
-        CGFloat bannerHeight = screenWidth/600*150;
+        // CGFloat screenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
+        // CGFloat bannerHeight = screenWidth/600*150;
+        // self.bannerView = [[BUNativeExpressBannerView alloc]
+        //                    initWithSlotID:[BuadMgr bannerAdId]
+        //                    rootViewController:self
+        //                    adSize:CGSizeMake(screenWidth, bannerHeight)
+        //                    IsSupportDeepLink:YES];
+        // self.bannerView.frame = CGRectMake(0, 10, screenWidth, bannerHeight);
+        // self.bannerView.delegate = self;
+        // [self.view addSubview:self.bannerView];
+        BUSize *imgSize = [BUSize sizeBy:BUProposalSize_Banner600_150];
+        const CGFloat screenWidth = CGRectGetWidth([UIScreen mainScreen].bounds);
+        const CGFloat screenHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
+        CGFloat bannerHeight = screenWidth * imgSize.height / imgSize.width;
         self.bannerView = [[BUNativeExpressBannerView alloc]
                            initWithSlotID:[BuadMgr bannerAdId]
                            rootViewController:self
+                           imgSize:imgSize
                            adSize:CGSizeMake(screenWidth, bannerHeight)
                            IsSupportDeepLink:YES];
-        self.bannerView.frame = CGRectMake(0, 10, screenWidth, bannerHeight);
+        self.bannerView.frame = CGRectMake(0, screenHeight-bannerHeight, screenWidth, bannerHeight);
         self.bannerView.delegate = self;
         [self.view addSubview:self.bannerView];
     }
