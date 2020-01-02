@@ -10,6 +10,6 @@
 
 @interface BUAdBanner : UIViewController
 - (void)loadBannerAd;
--(void)hideBanner;
+- (void)hideBanner;
 @end
 
