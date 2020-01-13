@@ -40,6 +40,7 @@ TODO: Add long description of the pod here.
   s.dependency 'UMCAnalytics'
 
   s.dependency 'Bytedance-UnionAD', '~> 2.5.1.5'
+  # s.dependency 'Bytedance-UnionAD'
   s.pod_target_xcconfig  =  {'OTHER_LDFLAGS'  =>  '$(inherited)'}
   # a.pod_target_xcconfig = { 'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) BYTE_DANCE_ONLY=1'}
 

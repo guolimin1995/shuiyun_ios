@@ -79,12 +79,13 @@ BUAdManager* BuadMgr;
 //     [GDTAction logAction:GDTSDKActionNameStartApp actionParam:@{@"value":@(123)}];
 // }
 
-+(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey
++(void) initBUAdSdk:(NSString*) appKey bannerKey:(NSString*) bannerKey videoKey:(NSString*) videoKey fullKey:(NSString*)fullKey
 {
-    [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey];
+    [BUAdManager setAllKeys:appKey banner_key:bannerKey video_key:videoKey full_key:fullKey];
     BuadMgr = [[BUAdManager alloc] init]; 
     [BUAdSDKManager setAppID:appKey];
     [BUAdSDKManager setIsPaidApp:NO];
+    [BuadMgr createBannerAdView];
     // sIsBUAdInited = true;
 }
 

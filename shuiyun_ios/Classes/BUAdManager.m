@@ -12,14 +12,17 @@
 NSString *BUAdKey = @"";
 NSString *bannerKey = @"";
 NSString *videoKey = @"";
+NSString *fullKey = @"";
+
 
 @implementation BUAdManager
 
 
-+(void)setAllKeys:(NSString*)key banner_key:(NSString*)banner_key video_key:(NSString*)video_key{
++(void)setAllKeys:(NSString*)key banner_key:(NSString*)banner_key video_key:(NSString*)video_key full_key:(NSString*)full_key{
     BUAdKey = key;
     bannerKey = banner_key;
     videoKey = video_key;
+    fullKey = full_key;
 }
 
 - (NSString *)appKey {
@@ -36,6 +39,9 @@ NSString *videoKey = @"";
     return videoKey;
 }
 
+-(NSString*)fullAdId{
+    return fullKey;
+}
 
 // 显示激励视频
 -(void)showRewardVideoAd:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
@@ -54,6 +60,32 @@ NSString *videoKey = @"";
         }
     }];
 }
+
+-(void)showFullVideoAd:(void (^)(NSString *))success failure:(void (^)(NSString *))failure{
+    if (!self.fullVideoAd) {
+        self.fullVideoAd = [BUAdFullVideo new];
+        //[[self getRootViewController].view addSubview:self.rewardVideoAd.view];
+        [[self getRootViewController].navigationController pushViewController:self.fullVideoAd animated:YES];
+    }
+    
+    //加载激励视频广告
+    [self.fullVideoAd loadFullVideoAd:@"" :^(NSString *data) {
+        if ([data isEqualToString:@"success"]) {
+            success(nil);
+        }else{
+            failure(nil);
+        }
+    }];
+}
+
+
+-(void)createBannerAdView{
+    if(!self.bannerAd){
+        self.bannerAd = [BUAdBanner new];
+        [[self getRootViewController].view addSubview:self.bannerAd.view];
+    }
+}
+
 
 -(void)showBannerAd 
 {
